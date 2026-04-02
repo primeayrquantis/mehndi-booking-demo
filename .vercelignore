@@ -1,0 +1,12 @@
+# This file specifies files and directories that should be ignored by Vercel during deployments.
+# You can add any files or directories you want to exclude here.
+
+node_modules/
+dist/
+built/
+coverage/
+.env
+*.log
+
+# Vercel specific entries here
+.vercel/
