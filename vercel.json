@@ -1,0 +1,1 @@
+{\n  "builds": [\n    {\n      "src": "*.js",\n      "use": "@vercel/node"\n    }\n  ],\n  "routes": [\n    {\n      "src": "/(.*)",\n      "dest": "/$1"\n    }\n  ]\n}
