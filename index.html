@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zara's Mehndi">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="format-detection" content="telephone=yes">
+    <title>Zara's Mehndi Studio | Premium Henna Art & Booking</title>
+    <meta name="description" content="Book your premium Mehndi & Henna art appointment with Zara's Mehndi Studio. Bridal, Arabic, Indo-Arabic and custom designs. Professional henna artist.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============ PRELOADER ============ -->
+    <div id="preloader">
+        <div class="loader-mandala">
+            <svg viewBox="0 0 200 200" class="mandala-svg">
+                <circle cx="100" cy="100" r="80" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5" stroke-dasharray="8 4" class="mandala-ring ring-1"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="url(#gold-gradient)" stroke-width="1" stroke-dasharray="5 3" class="mandala-ring ring-2"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="url(#gold-gradient)" stroke-width="1.5" stroke-dasharray="3 5" class="mandala-ring ring-3"/>
+                <circle cx="100" cy="100" r="20" fill="none" stroke="url(#gold-gradient)" stroke-width="1" class="mandala-ring ring-4"/>
+                <defs>
+                    <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#c9a84c"/>
+                        <stop offset="50%" style="stop-color:#f0d78c"/>
+                        <stop offset="100%" style="stop-color:#c9a84c"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <p class="loader-text">Zara's Mehndi Studio</p>
+    </div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="main-nav" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Zara's <span class="logo-accent">Mehndi</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+                <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link" data-section="testimonials">Reviews</a></li>
+                <li><a href="#booking" class="nav-link" data-section="booking">Book Now</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-admin" id="btn-admin-toggle" title="Admin Login">
+                    <i class="fas fa-lock"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ ADMIN LOGIN MODAL ============ -->
+    <div class="modal-overlay" id="admin-login-modal">
+        <div class="modal-card admin-login-card">
+            <button class="modal-close" id="admin-login-close">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-shield-halved"></i></div>
+                <h2>Admin Access</h2>
+                <p>Enter credentials to access the dashboard</p>
+            </div>
+            <form id="admin-login-form" class="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-username">Username</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="admin-username" placeholder="Enter username" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="admin-password">Password</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fas fa-key"></i>
+                        <input type="password" id="admin-password" placeholder="Enter password" required>
+                    </div>
+                </div>
+                <p class="login-hint">Demo: admin </p>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============ PUBLIC SITE ============ -->
+    <main id="public-site">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg-pattern"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="hero-particles"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Premium Henna Art Studio
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">The Art of</span>
+                    <span class="title-line title-accent">Mehndi</span>
+                    <span class="title-line">Perfected</span>
+                </h1>
+                <p class="hero-subtitle">Transform your special moments with exquisite handcrafted Mehndi designs. From bridal elegance to contemporary art — every stroke tells your story.</p>
+                <div class="hero-cta">
+                    <a href="#booking" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-check"></i> Book Your Session
+                    </a>
+                    <a href="#gallery" class="btn btn-outline btn-lg">
+                        <i class="fas fa-images"></i> View Portfolio
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="500">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Happy Brides</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="12">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Design Styles</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-section">
+                <div class="hero-img-wrapper">
+                    <img src="images/main img.jpg" alt="Beautiful Mehndi Design" class="hero-img" loading="eager">
+                    <div class="hero-img-frame"></div>
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fas fa-star"></i>
+                    <span>4.9 Rating</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-heart"></i>
+                    <span>2000+ Designs</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="section services-section">
+            <div class="section-bg-ornament"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Services</span>
+                    <h2 class="section-title">Crafted with <span class="text-gold">Passion</span></h2>
+                    <p class="section-desc">Choose from our curated collection of Mehndi art styles, each designed to make your occasion truly unforgettable.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" data-service="bridal">
+                        <div class="service-img-wrapper">
+                            <img src="images/Bridal Intricate.jpg" alt="Bridal Mehndi" loading="lazy">
+                            <div class="service-overlay">
+                                <span class="service-price">From ₹15,000</span>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-gem"></i></div>
+                            <h3>Bridal Mehndi</h3>
+                            <p>Full hand & feet coverage with intricate traditional motifs. Includes groom's name hidden design.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Full arms & legs</li>
+                                <li><i class="fas fa-check"></i> 4-6 hours session</li>
+                                <li><i class="fas fa-check"></i> Premium natural henna</li>
+                                <li><i class="fas fa-check"></i> Trial session included</li>
+                            </ul>
+                            <a href="#booking" class="btn btn-primary btn-sm service-book-btn" data-service-name="Bridal Mehndi" data-service-price="15000">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card featured" data-service="arabic">
+                        <div class="service-badge">Popular</div>
+                        <div class="service-img-wrapper">
+                            <img src="images/Arabic Elegant Trail.jpg" alt="Arabic Mehndi" loading="lazy">
+                            <div class="service-overlay">
+                                <span class="service-price">From ₹5,000</span>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-feather-pointed"></i></div>
+                            <h3>Arabic Mehndi</h3>
+                            <p>Flowing floral patterns with bold strokes. Perfect for engagements, parties and festive celebrations.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Both hands design</li>
+                                <li><i class="fas fa-check"></i> 1-2 hours session</li>
+                                <li><i class="fas fa-check"></i> Organic henna paste</li>
+                                <li><i class="fas fa-check"></i> Custom patterns</li>
+                            </ul>
+                            <a href="#booking" class="btn btn-primary btn-sm service-book-btn" data-service-name="Arabic Mehndi" data-service-price="5000">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-service="indo-arabic">
+                        <div class="service-img-wrapper">
+                            <img src="images/Fusion Indo Arabic.jpg" alt="Indo-Arabic Mehndi" loading="lazy">
+                            <div class="service-overlay">
+                                <span class="service-price">From ₹8,000</span>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-palette"></i></div>
+                            <h3>Indo-Arabic Fusion</h3>
+                            <p>Best of both worlds — Indian intricacy meets Arabic elegance. Unique contemporary designs.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Hands & wrist design</li>
+                                <li><i class="fas fa-check"></i> 2-3 hours session</li>
+                                <li><i class="fas fa-check"></i> Natural ingredients</li>
+                                <li><i class="fas fa-check"></i> Personalized motifs</li>
+                            </ul>
+                            <a href="#booking" class="btn btn-primary btn-sm service-book-btn" data-service-name="Indo-Arabic Fusion" data-service-price="8000">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-service="party">
+                        <div class="service-img-wrapper">
+                            <img src="images/Modern Fusion Art.jpg" alt="Party Mehndi" loading="lazy">
+                            <div class="service-overlay">
+                                <span class="service-price">From ₹2,000</span>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                            <h3>Party & Festival</h3>
+                            <p>Quick, trendy designs for parties, festivals, and events. Perfect for groups and gatherings.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> One hand design</li>
+                                <li><i class="fas fa-check"></i> 30-60 min session</li>
+                                <li><i class="fas fa-check"></i> Group discounts</li>
+                                <li><i class="fas fa-check"></i> On-site service</li>
+                            </ul>
+                            <a href="#booking" class="btn btn-primary btn-sm service-book-btn" data-service-name="Party & Festival" data-service-price="2000">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Our <span class="text-gold">Artistry</span></h2>
+                    <p class="section-desc">Browse through our collection of stunning Mehndi designs crafted with love and precision.</p>
+                </div>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="bridal">Bridal</button>
+                    <button class="filter-btn" data-filter="arabic">Arabic</button>
+                    <button class="filter-btn" data-filter="fusion">Fusion</button>
+                    <button class="filter-btn" data-filter="minimal">Minimal</button>
+                </div>
+                <div class="gallery-grid" id="gallery-grid">
+                    <div class="gallery-item" data-category="bridal">
+                        <img src="images/Bridal Royal.jpg" alt="Bridal Mehndi Design 1" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Bridal</span>
+                            <h4>Royal Bridal Design</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="arabic">
+                        <img src="images/Arabic Flowing.jpg" alt="Arabic Design" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Arabic</span>
+                            <h4>Flowing Arabesque</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item large" data-category="bridal">
+                        <img src="images/Bridal Intricate.jpg" alt="Bridal Mehndi Design 2" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Bridal</span>
+                            <h4>Intricate Bridal Art</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="fusion">
+                        <img src="images/Fusion Indo Arabic.jpg" alt="Fusion Design" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Fusion</span>
+                            <h4>Indo-Arabic Blend</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="minimal">
+                        <img src="images/Minimal Contemporary.jpg" alt="Minimal Mehndi" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Minimal</span>
+                            <h4>Contemporary Minimal</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="bridal">
+                        <img src="images/Bridal Feet Art.jpg" alt="Bridal Feet Mehndi" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Bridal</span>
+                            <h4>Bridal Feet Art</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="arabic">
+                        <img src="images/Arabic Elegant Trail.jpg" alt="Arabic Mehndi Pattern" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Arabic</span>
+                            <h4>Elegant Arabic Trail</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item large" data-category="fusion">
+                        <img src="images/Modern Fusion Art.jpg" alt="Fusion Mehndi" loading="lazy">
+                        <div class="gallery-item-overlay">
+                            <span class="gallery-category">Fusion</span>
+                            <h4>Modern Fusion Art</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="section-bg-ornament right"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Testimonials</span>
+                    <h2 class="section-title">Client <span class="text-gold">Love</span></h2>
+                    <p class="section-desc">Hear from our happy clients about their experience with Zara's Mehndi Studio.</p>
+                </div>
+                <div class="testimonials-slider" id="testimonials-slider">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Zara's bridal mehndi was absolutely stunning! Every guest at my wedding couldn't stop complimenting the intricate designs. She truly made my special day even more magical."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">P</div>
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <span>Bridal Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I've been going to Zara for all my festive occasions. Her Arabic designs are the best I've ever seen — unique, elegant and they stain beautifully every single time."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">A</div>
+                            <div class="author-info">
+                                <h4>Ayesha Khan</h4>
+                                <span>Regular Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Booked Zara for my sister's sangeet and she handled 15 guests beautifully! Her team was professional, on-time and the designs were gorgeous. Highly recommend!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">R</div>
+                            <div class="author-info">
+                                <h4>Ritu Agarwal</h4>
+                                <span>Event Client</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots" id="testimonial-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKING SECTION -->
+        <section id="booking" class="section booking-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Appointments</span>
+                    <h2 class="section-title">Book Your <span class="text-gold">Session</span></h2>
+                    <p class="section-desc">Select a service, pick your preferred date and time, and let us create magic on your hands.</p>
+                </div>
+
+                <div class="booking-container">
+                    <!-- Step Indicator -->
+                    <div class="booking-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-circle">1</div>
+                            <span class="step-label">Service</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="2">
+                            <div class="step-circle">2</div>
+                            <span class="step-label">Date & Time</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="3">
+                            <div class="step-circle">3</div>
+                            <span class="step-label">Details</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="4">
+                            <div class="step-circle">4</div>
+                            <span class="step-label">Confirm</span>
+                        </div>
+                    </div>
+
+                    <form id="booking-form" class="booking-form">
+                        <!-- Step 1: Service Selection -->
+                        <div class="booking-step-panel active" id="step-1">
+                            <h3 class="step-title"><i class="fas fa-sparkles"></i> Choose Your Service</h3>
+                            <div class="service-select-grid">
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="Bridal Mehndi" data-price="15000" data-duration="4-6 hrs">
+                                    <div class="service-option-card">
+                                        <i class="fas fa-gem"></i>
+                                        <h4>Bridal Mehndi</h4>
+                                        <p>Full bridal package</p>
+                                        <span class="option-price">₹15,000+</span>
+                                        <span class="option-duration">4-6 hours</span>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="Arabic Mehndi" data-price="5000" data-duration="1-2 hrs">
+                                    <div class="service-option-card">
+                                        <i class="fas fa-feather-pointed"></i>
+                                        <h4>Arabic Mehndi</h4>
+                                        <p>Elegant flowing design</p>
+                                        <span class="option-price">₹5,000+</span>
+                                        <span class="option-duration">1-2 hours</span>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="Indo-Arabic Fusion" data-price="8000" data-duration="2-3 hrs">
+                                    <div class="service-option-card">
+                                        <i class="fas fa-palette"></i>
+                                        <h4>Indo-Arabic Fusion</h4>
+                                        <p>Contemporary blend</p>
+                                        <span class="option-price">₹8,000+</span>
+                                        <span class="option-duration">2-3 hours</span>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="Party & Festival" data-price="2000" data-duration="30-60 min">
+                                    <div class="service-option-card">
+                                        <i class="fas fa-wand-magic-sparkles"></i>
+                                        <h4>Party & Festival</h4>
+                                        <p>Quick trendy design</p>
+                                        <span class="option-price">₹2,000+</span>
+                                        <span class="option-duration">30-60 min</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Date & Time -->
+                        <div class="booking-step-panel" id="step-2">
+                            <h3 class="step-title"><i class="fas fa-calendar-days"></i> Select Date & Time</h3>
+                            <div class="datetime-grid">
+                                <div class="calendar-section">
+                                    <div class="calendar-header">
+                                        <button type="button" class="cal-nav" id="cal-prev"><i class="fas fa-chevron-left"></i></button>
+                                        <h4 id="cal-month-year"></h4>
+                                        <button type="button" class="cal-nav" id="cal-next"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                    <div class="calendar-weekdays">
+                                        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                                    </div>
+                                    <div class="calendar-days" id="cal-days"></div>
+                                </div>
+                                <div class="time-section">
+                                    <h4 class="time-section-title">Available Time Slots</h4>
+                                    <p class="time-hint" id="time-hint">Select a date first</p>
+                                    <div class="time-slots" id="time-slots"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Personal Details -->
+                        <div class="booking-step-panel" id="step-3">
+                            <h3 class="step-title"><i class="fas fa-user-pen"></i> Your Details</h3>
+                            <div class="details-form-grid">
+                                <div class="form-group">
+                                    <label for="client-name">Full Name *</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="client-name" name="name" placeholder="Enter your full name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="client-phone">Phone Number *</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="client-phone" name="phone" placeholder="+91 98765 43210" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="client-email">Email Address *</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" id="client-email" name="email" placeholder="your@email.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="client-event">Event / Occasion</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-champagne-glasses"></i>
+                                        <select id="client-event" name="event">
+                                            <option value="">Select occasion</option>
+                                            <option value="Wedding">Wedding</option>
+                                            <option value="Engagement">Engagement</option>
+                                            <option value="Sangeet">Sangeet</option>
+                                            <option value="Festival">Festival (Eid, Diwali, etc.)</option>
+                                            <option value="Baby Shower">Baby Shower</option>
+                                            <option value="Birthday">Birthday</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="client-notes">Special Requests</label>
+                                    <div class="input-icon-wrapper textarea-wrapper">
+                                        <i class="fas fa-comment-dots"></i>
+                                        <textarea id="client-notes" name="notes" rows="3" placeholder="Any specific design preferences, colors, or special instructions..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Confirmation -->
+                        <div class="booking-step-panel" id="step-4">
+                            <h3 class="step-title"><i class="fas fa-clipboard-check"></i> Review & Confirm</h3>
+                            <div class="booking-summary" id="booking-summary">
+                                <!-- Filled by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Step Navigation -->
+                        <div class="booking-nav">
+                            <button type="button" class="btn btn-outline" id="btn-prev" style="display:none;">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btn-next">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-confirm" id="btn-confirm" style="display:none;">
+                                <i class="fas fa-check-circle"></i> Confirm Booking
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUCCESS MODAL -->
+        <div class="modal-overlay" id="booking-success-modal">
+            <div class="modal-card success-card">
+                <div class="success-animation">
+                    <div class="success-circle">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <h2>Booking Confirmed! 🎉</h2>
+                <p>Your appointment has been successfully booked. We'll send a confirmation to your email shortly.</p>
+                <div class="success-details" id="success-details"></div>
+                <button class="btn btn-primary" id="btn-close-success">Back to Home</button>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Contact <span class="text-gold">Us</span></h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                            <h4>Studio Address</h4>
+                            <p>42, Rose Garden Layout, Koramangala<br>Bangalore, Karnataka 560034</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <h4>Call Us</h4>
+                            <p>+91 98765 43210<br>+91 87654 32109</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <h4>Email</h4>
+                            <p>hello@zarasmehndi.com<br>bookings@zarasmehndi.com</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 10:00 AM - 8:00 PM<br>Sunday: By Appointment</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="social-link" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5962788506753!2d77.6192!3d12.9352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzA2LjciTiA3N8KwMzcnMDkuMSJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="100%" style="border:0;border-radius:16px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="nav-logo">
+                            <span class="logo-icon">✦</span>
+                            <span class="logo-text">Zara's <span class="logo-accent">Mehndi</span></span>
+                        </a>
+                        <p>Crafting beautiful henna art for over a decade. Every design is a masterpiece, every client is family.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#booking">Book Now</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <a href="#booking">Bridal Mehndi</a>
+                        <a href="#booking">Arabic Mehndi</a>
+                        <a href="#booking">Indo-Arabic Fusion</a>
+                        <a href="#booking">Party & Festival</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Zara's Mehndi Studio. All rights reserved.</p>
+                    <p>Designed with <i class="fas fa-heart" style="color:#c9a84c;"></i> for beautiful beginnings</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ============ ADMIN DASHBOARD ============ -->
+    <main id="admin-dashboard" class="admin-dashboard" style="display:none;">
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-header">
+                <span class="logo-icon">✦</span>
+                <span class="sidebar-title">Admin Panel</span>
+                <button class="sidebar-toggle-btn" id="sidebar-toggle-btn"><i class="fas fa-bars"></i></button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-panel="dashboard"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                <a href="#" class="sidebar-link" data-panel="bookings"><i class="fas fa-calendar-check"></i><span>Bookings</span></a>
+                <a href="#" class="sidebar-link" data-panel="calendar"><i class="fas fa-calendar-days"></i><span>Calendar</span></a>
+                <a href="#" class="sidebar-link" data-panel="availability"><i class="fas fa-clock"></i><span>Availability</span></a>
+                <a href="#" class="sidebar-link" data-panel="clients"><i class="fas fa-users"></i><span>Clients</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="btn-admin-logout">
+                    <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <div class="admin-main">
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <button class="mobile-sidebar-toggle" id="mobile-sidebar-toggle"><i class="fas fa-bars"></i></button>
+                    <h2 id="admin-page-title">Dashboard</h2>
+                </div>
+                <div class="admin-header-right">
+                    <div class="admin-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search bookings..." id="admin-search-input">
+                    </div>
+                    <div class="admin-profile">
+                        <div class="admin-avatar">Z</div>
+                        <span>Zara</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <!-- Dashboard Panel -->
+                <div class="admin-panel active" id="panel-dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-icon blue"><i class="fas fa-calendar-check"></i></div>
+                            <div class="stat-card-info">
+                                <h3 id="stat-total-bookings">0</h3>
+                                <p>Total Bookings</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-icon green"><i class="fas fa-check-circle"></i></div>
+                            <div class="stat-card-info">
+                                <h3 id="stat-confirmed">0</h3>
+                                <p>Confirmed</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-icon amber"><i class="fas fa-hourglass-half"></i></div>
+                            <div class="stat-card-info">
+                                <h3 id="stat-pending">0</h3>
+                                <p>Pending</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-icon purple"><i class="fas fa-indian-rupee-sign"></i></div>
+                            <div class="stat-card-info">
+                                <h3 id="stat-revenue">₹0</h3>
+                                <p>Revenue</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-clock"></i> Upcoming Bookings</h3>
+                                <a href="#" class="view-all-link" data-panel="bookings">View All</a>
+                            </div>
+                            <div class="upcoming-list" id="upcoming-list">
+                                <div class="empty-state">
+                                    <i class="fas fa-calendar-xmark"></i>
+                                    <p>No upcoming bookings</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-chart-pie"></i> Service Breakdown</h3>
+                            </div>
+                            <div class="service-breakdown" id="service-breakdown">
+                                <div class="empty-state">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>No data yet</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bookings Panel -->
+                <div class="admin-panel" id="panel-bookings">
+                    <div class="panel-toolbar">
+                        <div class="toolbar-filters">
+                            <select id="filter-status" class="toolbar-select">
+                                <option value="all">All Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                            <select id="filter-service" class="toolbar-select">
+                                <option value="all">All Services</option>
+                                <option value="Bridal Mehndi">Bridal Mehndi</option>
+                                <option value="Arabic Mehndi">Arabic Mehndi</option>
+                                <option value="Indo-Arabic Fusion">Indo-Arabic Fusion</option>
+                                <option value="Party & Festival">Party & Festival</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-sm" id="btn-export-csv">
+                            <i class="fas fa-download"></i> Export CSV
+                        </button>
+                    </div>
+                    <div class="bookings-table-wrapper">
+                        <table class="bookings-table" id="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Client</th>
+                                    <th>Service</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookings-tbody">
+                            </tbody>
+                        </table>
+                        <div class="empty-state" id="bookings-empty" style="display:none;">
+                            <i class="fas fa-inbox"></i>
+                            <p>No bookings found</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calendar Panel -->
+                <div class="admin-panel" id="panel-calendar">
+                    <div class="admin-calendar">
+                        <div class="admin-cal-header">
+                            <button type="button" class="cal-nav" id="admin-cal-prev"><i class="fas fa-chevron-left"></i></button>
+                            <h3 id="admin-cal-title"></h3>
+                            <button type="button" class="cal-nav" id="admin-cal-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="admin-cal-weekdays">
+                            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                        </div>
+                        <div class="admin-cal-days" id="admin-cal-days"></div>
+                    </div>
+                    <div class="cal-day-detail" id="cal-day-detail">
+                        <h3 id="cal-detail-title">Select a date to view bookings</h3>
+                        <div id="cal-detail-list"></div>
+                    </div>
+                </div>
+
+                <!-- Availability Panel -->
+                <div class="admin-panel" id="panel-availability">
+                    <div class="availability-container">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-clock"></i> Time Slot Settings</h3>
+                            </div>
+                            <div class="availability-grid" id="availability-grid">
+                                <!-- Filled by JS -->
+                            </div>
+                            <button class="btn btn-primary" id="btn-save-availability" style="margin-top:1.5rem;">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-calendar-xmark"></i> Block Dates</h3>
+                            </div>
+                            <div class="block-dates-section">
+                                <div class="form-group">
+                                    <label>Select date to block/unblock:</label>
+                                    <input type="date" id="block-date-input" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Reason (optional):</label>
+                                    <input type="text" id="block-reason" class="form-input" placeholder="e.g., Personal holiday">
+                                </div>
+                                <button class="btn btn-primary btn-sm" id="btn-block-date">
+                                    <i class="fas fa-ban"></i> Block Date
+                                </button>
+                                <div class="blocked-dates-list" id="blocked-dates-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clients Panel -->
+                <div class="admin-panel" id="panel-clients">
+                    <div class="bookings-table-wrapper">
+                        <table class="bookings-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Total Bookings</th>
+                                    <th>Last Booking</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clients-tbody">
+                            </tbody>
+                        </table>
+                        <div class="empty-state" id="clients-empty" style="display:none;">
+                            <i class="fas fa-users-slash"></i>
+                            <p>No clients yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Booking Detail Modal (Admin) -->
+    <div class="modal-overlay" id="booking-detail-modal">
+        <div class="modal-card booking-detail-card">
+            <button class="modal-close" id="booking-detail-close">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fas fa-file-lines"></i></div>
+                <h2>Booking Details</h2>
+            </div>
+            <div id="booking-detail-content"></div>
+            <div class="modal-actions" id="booking-detail-actions"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="images.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
