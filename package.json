@@ -1,13 +1,1 @@
-{
-  "name": "zara-mehndi-demo",
-  "version": "1.0.0",
-  "description": "Mehndi booking website",
-  "main": "app.js",
-  "scripts": {
-    "start": "npx http-server",
-    "build": "node build.js"
-  },
-  "keywords": ["mehndi", "booking"],
-  "author": "",
-  "license": "ISC"
-}
+{"name": "zara-mehndi-demo", "version": "1.0.0", "description": "Mehndi booking website", "main": "index.html", "scripts": {"start": "npx http-server", "dev": "npx http-server", "build": "echo 'Static site - no build needed'"}, "keywords": ["mehndi", "booking"], "author": "", "license": "ISC"}
